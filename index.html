@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculadora</title>
+    <title>Sorteio</title>
+    <link rel="shortcut icon" href="icone.png"/>
     <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous"
-	/>
+    />
 </head>
 <body class="bng-danger">
 <header>
         <!--MENU DO SITE-->
         <nav class="navbar navbar-light bg-info navbar-expand-sm shadow fixed-top" id="nav">
-            <div class="container text-center">
-               SORTEANDO
+            <div class="container text-center">    
+                <a href="#" class="navbar-brand">
+                    <img
+                        src="isd_logo.png"
+                        width="100px"
+                        class="d-inline-block align-top"
+                    />
+                </a>
             </div>
         </nav>
     </header>
     <main>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <br/>
@@ -37,7 +46,7 @@
                     <br/>
                     <input type="number" id="GrupNumber" class="form-control"></input>
                 </div>
-                <imput type="button" class="btn btn-primary" onclick="sortear()">Sortear</imput>
+                <button type="button" class="btn btn-primary" onclick="sortear()">Sortear</button>
                 <br/>
                 <br/>
                 <label><h3>SORTEADOS:</h3></label>
@@ -51,7 +60,7 @@
     </main>
     <br/>
     <br/>
-    <footer class="py-2 bg-info">
+    <footer class="py-2 bg-info corf">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center ">
@@ -108,8 +117,6 @@
 
         function exibir(){
             $("#display").val(i+1 + "º" + "=" +array[i++]);
-           
-            
         }
     </script>
 
