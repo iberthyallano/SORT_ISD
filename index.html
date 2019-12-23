@@ -1,140 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sorteio</title>
-    <link rel="shortcut icon" href="icone.png"/>
-    <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous"
-    />
-</head>
-<body class="bng-danger">
-<header>
-        <!--MENU DO SITE-->
-        <nav class="navbar navbar-light bg-info navbar-expand-sm shadow fixed-top" id="nav">
-            <div class="container text-center">    
-                <a href="#" class="navbar-brand">
-                    <img
-                        src="isd_logo.png"
-                        width="100px"
-                        class="d-inline-block align-top"
-                    />
-                </a>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <div class="container text-center">
-            <form >
-                <div class="form-group">
-                    <label>Nª de pacientes</label>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sorte I.S.D.</title>
+        <link rel="shortcut icon" href="imagem/icone.png"/>
+        <script src="index.js"></script>
+        <link href="index.css" rel="stylesheet">
+
+        <!--RECURSOS DO BOOTSTRAP-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    </head>
+    <body class="bg-muted">
+        
+        <!--AVISO PARA RELIGAR O SCRIPT, POIS ELE NÃO ESTÁ ATIVO-->
+        <noscript>
+
+        </noscript>
+        
+        <!--CABEÇALHO DA APLICAÇÃO-->
+        <section>
+            <header>
+                <nav class="navbar navbar-light navbar-expand-sm shadow fixed-top" id="nav">
+                    <div class="container text-center">    
+                        <div class="container">
+                            <img src="imagem/logo-isd-site-testeira_266x121_acf_cropped.png" class="fixed-top shadow" id="logo"/>
+                        </div>
+                        <a href="#" class="navbar-brand">
+                            <br/>
+                            <br/>
+                        </a>
+                    </div>
+                </nav>
+            </header>    
+        </section> 
+        
+        <!--CORPO DA APLICAÇÃO-->
+        <section>
+            <main>
+                <div class="container text-center">
+                    <!--CARTÃO DE TOTAL DE PESSOAS-->
+                    <div class="card text-center">
+                        <div class="card-header label">
+                            <label><h3>TOTAL DE PESSOAS:</h3></label>
+                        </div>
+                        <div class="card-body">
+                            <input type="number" id="PacNumber" class="form-control"></input>
+                        </div>
+                    </div>
+
                     <br/>
-                    <input type="number" id="PacNumber" class="form-control"></input>
-                </div>
-                <div class="form-group">
-                    <label>Nª de pessoas no grupo</label>
-                    <br/>
-                    <input type="number" id="GrupNumber" class="form-control"></input>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="sortear()">Sortear</button>
-                <br/>
-                <br/>
-                <label><h3>SORTEADOS:</h3></label>
-                <input id="display" class="form-control text-center" style="font-size: 40px;" type="text" readonly>
-                <!--<textarea id="display" style="width:100%;height:200px" class="form-control form-control-lg"></textarea>-->
-                <br/>
-                <button type="button" class="btn btn-primary" onclick="exibir()">Próximo</button>
-                <br/>
-            </form>
-        </div>
-    </main>
-    <br/>
-    <br/>
-    <footer class="py-2 bg-info corf">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center ">
-                    <a href="https://www.instagram.com/isdnarede/?hl=pt">
-                        <img
-                            src="https://img.icons8.com/material-outlined/24/000000/instagram-new.png"
-                        />
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <div class="container text-center text-dark">
-                        <small
-                            >Copyright &copy; Instituto Santos Dumont. Todos os diretitos reservados.</small
-                        >
+                    
+                    <!--CARTÃO DE TOTAL DE PESSOAS POR GRUPO-->
+                    <div class="card text-center">
+                        <div class="card-header label">
+                            <label><h3>TOTAL DE PESSOAS POR GRUPO:</h3></label>
+                        </div>
+                        <div class="card-body">
+                            <input type="number" id="GrupNumber" class="form-control"></input>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn botao shadow btn-lg btn-block" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" onclick="sortear()">Sortear</button>
+                       
+                    <div class="collapse" id="collapseExample">
+                        <div class="card">
+                            <div class="card-header label">
+                                <label><h3>SORTEADOS:</h3></label>
+                            </div>
+                            <div class="card-body">
+                                <div class="input-group input-group-lg">
+                                    <div class="input-group-prepend">
+                                        <button type="button" class="btn botao" id="button-addon2" onclick="exibir2()">Anterior</button>
+                                    </div>
+                                    <input id="display" type="text" class="form-control margem" >
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn botao" id="button-addon1"onclick="exibir1()">Próximo</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                                OUTRAS FORMAS DE PRINTAR OS NÚMEROS
+                                <input id="display" class="form-control text-center" style="font-size: 40px;" type="text" readonly>
+                                <textarea id="display" style="width:100%;height:200px" class="form-control form-control-lg"></textarea>
+                            -->
+                            <br/>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="container text-center text-dark">
-                        <small>Designed by Instituto Santos Dumont</small>
+            </main>
+        </section>
+        
+        <!--RODAPÉ DA APLICAÇÃO-->
+        <section>
+            <footer class="py-2 fixed-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 text-center" style=" margin-top:11px">
+                            <a href="https://www.instagram.com/isdnarede/?hl=pt">
+                                <img src="imagem/icons8-instagram-500.png" class="insta">
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="container text-center">
+                                <small>Copyright &copy; Instituto Santos Dumont. Todos os diretitos reservados.</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="container text-center">
+                                <small>Designed by Instituto Santos Dumont</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </footer>
-    <script>
-        var array = [];
-        i=0;
-        function embaralhar(array) {
-            var indice_atual = array.length, valor_temporario, indice_aleatorio;
-            while (0 !== indice_atual) {
-                indice_aleatorio = Math.floor(Math.random() * indice_atual);
-                indice_atual -= 1;
-                valor_temporario = array[indice_atual];
-                array[indice_atual] = array[indice_aleatorio];
-                array[indice_aleatorio] = valor_temporario;
-            }
-            return array;
-        }
-         function sortear(){
-            i=1;
-            var PacNum = document.getElementById("PacNumber").value;
-            var PesGrup = document.getElementById("GrupNumber").value;
-            var temp = 1;
-            for(g = 0; g < PacNum; g++){
-                if(temp > PesGrup)
-                    temp = 1;
-                    array[g] = temp; 
-                temp = temp + 1;
-            }
-           embaralhar(array);
-           console.log(array);
-           $("#display").val(i +"º" + "=" +array[0])
-        }
+            </footer>
+        </section>
 
-        function exibir(){
-            $("#display").val(i+1 + "º" + "=" +array[i++]);
-        }
-    </script>
-
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"
-    ></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"
-    ></script>
-    <script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"
-    ></script>
-</body>
-
+        <!--RECURSOS DO BOOTSTRAP-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
 </html>

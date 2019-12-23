@@ -1,0 +1,40 @@
+nav{
+    /* background-image: linear-gradient( #d17e30, #386162); */
+    background-color: #d17e30;
+    /* background-color: #edbc48;
+    border-top: 20px solid#d17e30;*/
+    border-bottom: 10px solid #386162;
+    
+}
+main{
+    margin-bottom: 20px;
+    margin-top: 180px;
+}
+footer{
+    color: white;
+    background-color: #d17e30;
+    border-top: 10px solid #386162;
+}
+.margem{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.botao{
+    color: white;
+    background-color: #edbc48;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#logo{
+    margin-left: 60px;
+}
+#logo2{
+    align-items:center;
+}
+.insta{
+    width: 30px;
+}
+.label{
+    color:  #386162; 
+}
