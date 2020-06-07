@@ -1,9 +1,14 @@
+:root{
+    --laranja: #d17e30;
+    --amarelo: #edbc48;
+    --verde: #386162;
+}
 nav{
-    /* background-image: linear-gradient( #d17e30, #386162); */
-    background-color: #d17e30;
-    /* background-color: #edbc48;
+    /* background-image: linear-gradient( var(--laranja), var(--verde)); */
+    background-color: var(--laranja);
+    /* background-color: var(--amarelo);
     border-top: 20px solid#d17e30;*/
-    border-bottom: 10px solid #386162;
+    border-bottom: 10px solid var(--verde);
     
 }
 main{
@@ -12,8 +17,8 @@ main{
 }
 footer{
     color: white;
-    background-color: #d17e30;
-    border-top: 10px solid #386162;
+    background-color: var(--laranja);
+    border-top: 10px solid var(--verde);
 }
 .meio{
     margin-bottom: 58px;
@@ -25,7 +30,7 @@ footer{
 }
 .botao{
     color: white;
-    background-color: #edbc48;
+    background-color: var(--amarelo);
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -39,5 +44,5 @@ footer{
     width: 30px;
 }
 .label{
-    color:  #386162; 
+    color:  var(--verde); 
 }

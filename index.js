@@ -14,6 +14,7 @@ function embaralhar(array) {
 }
 
 function sortear(){
+    arry = []
     var PacNum = document.getElementById("PacNumber").value;
     var PesGrup = document.getElementById("GrupNumber").value;
     i=1;
